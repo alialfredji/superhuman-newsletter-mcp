@@ -1,9 +1,24 @@
 {
-  "name": "superhuman-mcp",
+  "name": "superhuman-newsletter-mcp",
   "version": "1.0.0",
-  "description": "MCP server that fetches Superhuman AI newsletter posts for weekly digest generation",
+  "description": "MCP server that fetches full post content from Superhuman AI and The Code newsletters for Claude digest generation. Supports local stdio and remote HTTP deployment.",
   "type": "module",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alialfredji/superhuman-newsletter-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "newsletter",
+    "superhuman",
+    "ai",
+    "digest"
+  ],
+  "author": "alialfredji",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
