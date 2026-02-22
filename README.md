@@ -68,7 +68,7 @@ Use the hosted instance (once deployed to Render) — no local install needed.
 {
   "mcpServers": {
     "superhuman-newsletter": {
-      "url": "https://your-service.onrender.com/mcp"
+      "url": "https://superhuman-newsletter-mcp.onrender.com/mcp"
     }
   }
 }
