@@ -4,6 +4,12 @@
   "description": "MCP server that fetches full post content from Superhuman AI and The Code newsletters for Claude digest generation. Supports local stdio and remote HTTP deployment.",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "superhuman-newsletter-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/alialfredji/superhuman-newsletter-mcp.git"

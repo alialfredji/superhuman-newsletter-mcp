@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
@@ -656,6 +657,20 @@ async function startStdioServer() {
 async function startHttpServer() {
   const app = express();
   app.use(express.json());
+
+  // CORS — required for Claude.ai cloud connector (cross-origin requests)
+  app.use((_req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, mcp-session-id, Accept");
+    res.setHeader("Access-Control-Expose-Headers", "mcp-session-id");
+    next();
+  });
+
+  // OPTIONS preflight — must respond before the main handler sees it
+  app.options("/mcp", (_req, res) => {
+    res.sendStatus(204);
+  });
 
   const transports = new Map<string, StreamableHTTPServerTransport>();
 

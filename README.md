@@ -74,6 +74,25 @@ Use the hosted instance (once deployed to Render) — no local install needed.
 }
 ```
 
+### Option C — npx (no install)
+
+Run directly without cloning or installing anything. npm downloads and runs the latest version on demand.
+
+**Configure Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "superhuman-newsletter": {
+      "command": "npx",
+      "args": ["superhuman-newsletter-mcp"]
+    }
+  }
+}
+```
+
+Restart Claude Desktop after saving.
+
 ---
 
 ## What to ask Claude
